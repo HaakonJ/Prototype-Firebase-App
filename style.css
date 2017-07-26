@@ -167,7 +167,7 @@ body,
     }
     #btnScan {
         color: rgba(25, 65, 104, 1);
-        margin: 50px 33%;
+        margin: 50px 40%;
         width: 150px;
         height: 50px;
         line-height: 100%;
@@ -190,14 +190,14 @@ body,
         background-color: rgba(25, 65, 104, 1);
     }
     .titleImage {
-        height: 20px;
+        height: 30px;
         margin-top: 20px;
         margin-left: 0px;
         margin-right: 5px;
     }
     .title {
         width: 185px;
-        font-size: 15px;
+        font-size: 20px;
         margin-top: 20px;
         margin-left: 5px;
     }
