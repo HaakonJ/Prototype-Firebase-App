@@ -2,6 +2,14 @@
     display: none;
 }
 
+#btnFind {
+    color: black;
+    position: absolute;
+    top: 180px;
+    right: 20px;
+    z-index: 50;
+}
+
 html,
 body,
 #map2 {
