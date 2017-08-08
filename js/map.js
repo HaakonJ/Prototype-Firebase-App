@@ -127,8 +127,8 @@ btnFind.addEventListener('click', e => {
             document.getElementById('map').data = 'http://lynnwoodwa.maps.arcgis.com/apps/StoryMapBasic/index.html?appid=9da6d2bdffa144d99748e259e417176c&extent=-122.3463,47.8138,' + found + '&level=18&marker=' + found;
 
             var radlat1 = Math.PI * latitude / 180;
-            var radlat2 = Math.PI * (latitude + .0001) / 180;
-            var theta = longitude - (longitude + .0001);
+            var radlat2 = Math.PI * (latitude + .0002) / 180;
+            var theta = longitude - (longitude + .0002);
             var radtheta = Math.PI * theta / 180;
             var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
             dist = Math.acos(dist);
