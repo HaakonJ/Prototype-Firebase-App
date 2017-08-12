@@ -2,7 +2,7 @@
     display: none;
 }
 
-.collection {
+#collection {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
@@ -14,7 +14,7 @@
 }
 
 .eggItem h1 {
-    font-size: 35px;
+    font-size: 32px;
 }
 
 .eggImage {
