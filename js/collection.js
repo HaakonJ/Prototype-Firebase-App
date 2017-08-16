@@ -147,6 +147,9 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         const dbUserRef = firebase.database().ref();
         const dbEggRef = dbUserRef.child('users').child(firebaseUser.uid).child('eui');
 
+        const notCollected = 0;
+        const collected = 0;
+
         dbEggRef.orderByChild('eggNum').on('child_added', function(snap) {
             if (snap.val().bool == "true") {
                 const section = document.createElement('section');
@@ -167,6 +170,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                 //img.href = 'egg' + 101 + '.html'
 
                 section.appendChild(img)
+                collected++;
             } else {
                 const section = document.createElement('section');
                 section.classList.add('eggItem');
@@ -182,10 +186,15 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                 img.classList.add('eggImage');
                 img.title = 'egg' + snap.val().eggNum;
                 img.id = 'egg' + snap.val().eggNum;
-                img.src = 'images/NewMysteryEgg.png'
+                img.src = 'images/NewMysteryEgg.png';
 
-                section.appendChild(img)
+                section.appendChild(img);
+                notCollected++;
+                collected++;
             }
+            const pecentCollect;
+            const collectedegg = notCollected / collected;
+            pecentCollect = Math.round(collectedegg * 100);
             //console.log(snap.val())
         });
 

@@ -204,7 +204,9 @@ btnFind.addEventListener('click', e => {
             dist = dist * 60 * 1.1515;
             distFinal = dist * 5280;
 
-            console.log("   Distance between two Geolocations:  " + distFinal);
+            //console.log(" Geolocation:  " + found);
+
+            //console.log("   Distance between two Geolocations:  " + distFinal);
         }
 
         function error() {
