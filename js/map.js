@@ -10,42 +10,6 @@ var config = {
 firebase.initializeApp(config);
 
 //Get elements
-const preObject = document.getElementById('object');
-const ulList = document.getElementById('list');
-
-// Create reference
-const dbRefObject = firebase.database().ref().child('object');
-const dbRefList = dbRefObject.child('hobbies').child('egg');
-
-// Sync Object Changes
-dbRefObject.on('value', snap => {
-    preObject.innerHTML = JSON.stringify(snap.val(), null, 3);
-});
-
-// Sync List Changes
-dbRefList.on('child_added', snap => {
-
-    const li = document.createElement('li');
-    li.innerText = snap.val();
-    li.id = snap.key;
-    ulList.appendChild(li);
-});
-
-dbRefList.on('child_changed', snap => {
-
-    const liChanged = document.getElementById(snap.key);
-    liChanged.innerText = snap.val();
-
-});
-
-dbRefList.on('child_removed', snap => {
-
-    const liToRemove = document.getElementById(snap.key);
-    liToRemove.remove();
-
-});
-
-//Get elements
 const txtName = document.getElementById('txtName');
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
@@ -192,7 +156,7 @@ btnFind.addEventListener('click', e => {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
             var found = longitude + "," + latitude;
-            document.getElementById('map').data = 'http://lynnwoodwa.maps.arcgis.com/apps/StoryMapBasic/index.html?appid=9da6d2bdffa144d99748e259e417176c&extent=-122.3463,47.8138,' + found + '&level=18&marker=' + found;
+            document.getElementById('map').src = 'http://lynnwoodwa.maps.arcgis.com/apps/StoryMapBasic/index.html?appid=9da6d2bdffa144d99748e259e417176c&extent=-122.3463,47.8138,' + found + '&level=18&marker=' + found;
 
             var radlat1 = Math.PI * latitude / 180;
             var radlat2 = Math.PI * (latitude + .0002) / 180;
