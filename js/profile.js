@@ -172,7 +172,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                 } else {
                     img.src = 'images/TestEgg' + snap.val().eggNum + '.png';
                 }
-                //img.href = 'egg' + 101 + '.html'
+                ////similarly to the image if the name of a website contains the egg value then it should be able to be pulled up this way.
+                //img.href = 'https://haakonj.github.io/Prototype-Firebase-App/egg' + snap.val().eggNum + '.html'
 
                 section.appendChild(img);
                 recentCount++;
