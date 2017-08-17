@@ -166,7 +166,13 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
                 img.classList.add('eggImage');
                 img.title = 'egg' + snap.val().eggNum;
                 img.id = 'egg' + snap.val().eggNum;
-                img.src = 'images/TestEgg' + snap.val().eggNum + '.png';
+
+                //img.src = 'images/TestEgg' + snap.val().eggNum + '.png';
+                if (snap.val().eggNum <= 100) {
+                    img.src = 'images/TestEgg102.png';
+                } else {
+                    img.src = 'images/TestEgg' + snap.val().eggNum + '.png';
+                }
                 //img.href = 'egg' + 101 + '.html'
 
                 section.appendChild(img)
