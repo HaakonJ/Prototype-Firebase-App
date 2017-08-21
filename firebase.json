@@ -1,11 +1,13 @@
 {
-    "hosting": {
-        "firebase": "Test Project",
-        "public": ".",
-        "ignore": [
-            "firebase.json",
-            "**/.*",
-            "**/node_modules/**"
-        ]
-    }
+  "hosting": {
+    "firebase": "Test Project",
+    "public": ".",
+    "js": ".",
+    "images": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
 }
