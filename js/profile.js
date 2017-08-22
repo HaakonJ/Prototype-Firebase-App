@@ -18,9 +18,13 @@ const LoginMessage = document.getElementById('LoginMessage')
 //Add Login Event
 btnLogin.addEventListener('click', e => {
     //Get email and pass
+
+    const name = txtName.value;
     const email = txtEmail.value;
     const pass = txtPassword.value;
     const auth = firebase.auth();
+
+
     //Sign in
     const promise = auth.signInWithEmailAndPassword(email, pass);
     promise.catch(e => console.log(e.message));
@@ -171,7 +175,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
                 section.appendChild(img);
                 recentCount++;
-                console.log(recentCount + snap.val().timeStamp);
+                // console.log(recentCount + snap.val().timeStamp);
                 //collected++;
             } //else {
 
@@ -217,24 +221,24 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         var recentCount = 0;
         dbEggRef.orderByChild('eggNum').on('child_added', function(snap) {
             if (snap.val().bool == "true") {
-                
+
                 collected++;
             } else {
 
-            notCollected++;
-             collected++;
+                notCollected++;
+                collected++;
             }
             var pecentCollect;
             var collectedegg = notCollected / collected;
             pecentCollect = Math.round(collectedegg * 100);
-			var percentNotCollected = 100 - pecentCollect;
-            console.log('Not Collected Eggs ' + notCollected + ' Collected Eggs ' + collected + ' Percentage ' + pecentCollect);
-			
-			const progressEgg = document.getElementById('progressEgg');
-			const eggProgressTxt = document.getElementById('eggProgressTxt');
-        
-		progressEgg.setAttribute("style", "clip:rect(" + pecentCollect * 3 + "px, 200px, 300px, 0px)");
-		eggProgressTxt.innerText = percentNotCollected + ' %';
+            var percentNotCollected = 100 - pecentCollect;
+            //console.log('Not Collected Eggs ' + notCollected + ' Collected Eggs ' + collected + ' Percentage ' + pecentCollect);
+
+            const progressEgg = document.getElementById('progressEgg');
+            const eggProgressTxt = document.getElementById('eggProgressTxt');
+
+            progressEgg.setAttribute("style", "clip:rect(" + pecentCollect * 3 + "px, 200px, 300px, 0px)");
+            eggProgressTxt.innerText = percentNotCollected + ' %';
         });
 
     }
