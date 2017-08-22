@@ -162,10 +162,10 @@
                      const dbUserRef = firebase.database().ref();
                      // map.src = 'https://www.arcgis.com/home/webmap/viewer.html?webmap=ee17122bc13e41e2977d75ef541647dc&extent=-122.3642,47.7973,' + found + '&level=18&marker=' + found;
 
-                     eggs.orderByChild('latitude').startAt(latitude - 0.0001).endAt(latitude + 0.0001).on('child_added', function(snap) {
-                         if (snap.val().longitude >= (longitude - 0.0001) && snap.val().longitude <= (longitude + 0.0001)) {
-                             console.log('Egg' + snap.val().egg + 'Bool')
-                             console.log(latitude, longitude)
+                     eggs.orderByChild('egg').on('child_added', function(snap) {
+                         if (snap.val().longitude >= (longitude - 0.0001) && snap.val().longitude <= (longitude + 0.0001) && snap.val().latitude >= (latitude - 0.0001) && snap.val().latitude <= (latitude + 0.0001)) {
+                             //console.log('Egg' + snap.val().egg + 'Bool')
+                             //console.log(latitude, longitude)
                              const dbUserRef = firebase.database().ref();
                              dbUserRef.child('users').child(firebaseUser.uid).child('eui').child('e' + snap.val().egg + 'ui').set({ bool: "true", eggNum: snap.val().egg, timeStamp: new Date().toString() });
 
@@ -274,4 +274,9 @@
                      });
              });
      }
+ });
+
+ const btnHide = document.getElementById('btnHide');
+ btnHide.addEventListener('click', e => {
+     updateCard.classList.add('hide');
  });
