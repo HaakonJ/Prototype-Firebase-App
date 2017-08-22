@@ -152,7 +152,7 @@ btnFind.addEventListener('click', e => {
             var latitude = position.coords.latitude;
             var longitude = position.coords.longitude;
             var found = longitude + "," + latitude;
-            document.getElementById('map').src = 'http://www.arcgis.com/home/webmap/viewer.html?webmap=ee17122bc13e41e2977d75ef541647dc&extent=-122.3642,47.7973,' + found + '&level=18&marker=' + found;
+            document.getElementById('map').src = 'https://www.arcgis.com/home/webmap/viewer.html?webmap=ee17122bc13e41e2977d75ef541647dc&extent=-122.3642,47.7973,' + found + '&level=18&marker=' + found;
 
             var radlat1 = Math.PI * latitude / 180;
             var radlat2 = Math.PI * (latitude + .0002) / 180;
