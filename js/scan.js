@@ -167,7 +167,8 @@
                              //console.log('Egg' + snap.val().egg + 'Bool')
                              //console.log(latitude, longitude)
                              const dbUserRef = firebase.database().ref();
-                             dbUserRef.child('users').child(firebaseUser.uid).child('eui').child('e' + snap.val().egg + 'ui').set({ bool: "true", eggNum: snap.val().egg, timeStamp: new Date().toString() });
+                             //Date.now() gives you the number of milliseconds since january 1 1970 since the newest scanned egg will always be the largest meaning that it will always show up in most recent eggs in profile
+                             dbUserRef.child('users').child(firebaseUser.uid).child('eui').child('e' + snap.val().egg + 'ui').set({ bool: "true", eggNum: snap.val().egg, timeStamp: Date.now() });
 
                              const scanned = document.getElementById('scanned');
                              const updateCard = document.getElementById('updateCard');
