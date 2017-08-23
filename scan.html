@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="js/mdl/material.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <link rel="stylesheet" href="https://js.arcgis.com/3.21/esri/css/esri.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,500" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -35,23 +35,29 @@
             <span class="mdl-layout-title">Lyndwood Egg Hunt</span>
             <nav class="mdl-navigation">
                 <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div id="frmName" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="string" id="txtName">
                         <label class="mdl-textfield__label" for="txtName">Name...</label>
                     </div>
                 </form>
 
                 <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div id="frmEmail" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="email" id="txtEmail">
                         <label class="mdl-textfield__label" for="txtEmail">Email...</label>
                     </div>
                 </form>
 
                 <form action="#">
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <div id="frmPassword" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="password" id="txtPassword">
                         <label class="mdl-textfield__label" for="txtPassword">Password...</label>
+                    </div>
+                </form>
+
+                <form action="#">
+                    <div id="frmUserName" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label class="mdl-textfield__label" for="txtUserName">Hi, UserName...</label>
                     </div>
                 </form>
 
@@ -92,6 +98,7 @@
 
                     </div>
                 </div>
+
                 <script src="js/scan.js"></script>
 
             </div>
